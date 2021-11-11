@@ -47,7 +47,9 @@ calendar.config.onClose.push((selectedDates) => {
 refs.btnForStartTimer.addEventListener('click', () => {
 
     if (setUserTime < new Date()) {
-        return Report.failure("Please choose a date in the future", "", 'Ok');
+        Report.failure("Please choose a date in the future", "", 'Ok');
+            refs.btnForStartTimer.setAttribute('disabled', 'disabled');
+        return
     }
 
 
